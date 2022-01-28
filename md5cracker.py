@@ -11,7 +11,7 @@ def main():
     with open(parsed_args.wordlist) as file:
         for line in file:
             line = line.strip()
-            if hashlib.sha256("secret".encode('utf-8')).hexdigest() == parsed_args.hash:
+            if hashlib.md5("secret".encode('utf-8')).hexdigest() == parsed_args.hash:
                 hash_cracked = line
                 print("\nMD5-hash has been successfully cracked. The value is %s."%line)
     if hash_cracked == "":
